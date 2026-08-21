@@ -1,29 +1,77 @@
-# Welcome to your Lovable project
+# AI Productivity Assistant
 
-This project was built with [Lovable](https://lovable.dev).
+A simple, professional web application that combines three AI-powered tools to help people save time and stay organized:
 
-## Build with Lovable
+- **Meeting Notes Summarizer** – turn raw meeting notes into structured summaries with key points, decisions, and action items.
+- **AI Task Planner** – convert goals into step-by-step task plans with priorities, deadlines, and progress tracking.
+- **Smart Email Generator** – draft human-sounding emails in various tones based on recipient, subject, and details.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+The tools are connected into a single workflow: meeting action items become tasks, and tasks can be turned into emails.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Live demo
 
-## Development
+Published URL: https://flow-assist-ai-13.lovable.app
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Features
+
+- Clean, modern, responsive design that works on mobile and desktop.
+- Shared workspace state across tools.
+- One-click hand-off from Meeting → Summary → Tasks → Email.
+- Loading indicators, friendly error messages, and helpful instructions.
+- AI responses are concise and never invent information beyond what the user provides.
+
+## Tech stack
+
+- [TanStack Start](https://tanstack.com/start)
+- [React](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Lovable AI Gateway](https://docs.lovable.dev/features/ai-gateway)
+
+## Getting started
+
+Make sure you have [Node.js](https://nodejs.org) installed (preferably via [nvm](https://github.com/nvm-sh/nvm)).
 
 ```sh
-git clone <this-repository-url>
+# Clone the repository
+git clone <repository-url>
 cd <repository-name>
-npm i
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-## Built with
+The app will be available at `http://localhost:8080`.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Project structure
+
+```
+src/
+  components/        # Shared UI components (AppShell, etc.)
+  lib/               # Server functions and AI helpers
+  routes/            # TanStack Start routes
+  styles.css         # Global styles and design tokens
+```
+
+## Environment variables
+
+The AI features use the Lovable AI Gateway. In a Lovable-managed environment these are configured automatically. For local development outside Lovable, set:
+
+```sh
+LOVABLE_API_KEY=your-lovable-api-key
+```
+
+## How the workflow works
+
+1. Go to **Meeting Summarizer** and paste your notes.
+2. Review the generated summary and action items, then click **Create Tasks**.
+3. Open **Task Planner** to see the action items as tasks, edit them, or generate new plans from goals.
+4. Select a task and click **Draft Email** to pre-fill the **Email Generator**.
+5. Choose a tone and generate a ready-to-send email.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
